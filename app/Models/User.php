@@ -34,6 +34,7 @@ public function enrolledCourses()
 
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
     ];

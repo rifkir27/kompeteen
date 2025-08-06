@@ -1,79 +1,117 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Register - Kompeteen</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite(['resources/css/app.css'])
+
+    <!-- Google Font Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap (optional) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #4b0082;
+            height: 100vh;
+        }
+
+        .register-box {
+            max-width: 420px;
+            width: 100%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .brand {
+            color: white;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+
+        .brand span {
+            color: orange;
+        }
+
+        input.form-control {
+            border: 1px solid orange;
+        }
+
+        .btn-register {
+            background-color: #4b0082;
+            color: white;
+            font-weight: 600;
+        }
+
+        .btn-register:hover {
+            background-color: #3a006d;
+        }
+
+        .form-check-label {
+            font-size: 13px;
+        }
+
+        a {
+            text-decoration: underline;
+            color: #333;
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
-    <div class="min-h-screen flex items-center justify-center">
-        <div class="max-w-4xl w-full bg-white shadow-lg rounded-lg overflow-hidden">
-            <div class="flex flex-col md:flex-row">
-                <!-- Left side image -->
-                <div class="hidden md:block md:w-1/2 bg-gradient-to-tr from-purple-800 to-purple-600 p-12">
-                    <div class="text-white">
-                        <h2 class="text-3xl font-bold mb-4">Bergabung dengan Kompeteen</h2>
-                        <p class="text-lg mb-8">Mulai perjalanan belajarmu dan tingkatkan kompetensimu bersama kami.</p>
-                        <img src="/images/hero-illustration.svg" class="max-w-full h-auto" alt="Ilustrasi">
-                    </div>
-                </div>
+<body class="d-flex flex-column align-items-center justify-content-center">
 
-                <!-- Registration form -->
-                <div class="w-full md:w-1/2 py-16 px-8">
-                    <div class="max-w-sm mx-auto">
-                        <div class="text-center mb-8">
-                            <img src="/images/logo-kompeteen.png" alt="Logo Kompeteen" class="mx-auto h-16 mb-4">
-                            <h2 class="text-2xl font-bold text-gray-800">Buat Akun Baru</h2>
-                            <p class="text-sm text-gray-500">Daftar untuk memulai perjalanan belajarmu</p>
-                        </div>
+    <!-- Kompeteen logo -->
+    <div class="text-center mb-3 brand">Kompe<span>teen</span></div>
 
-                        <form method="POST" action="{{ route('register') }}" class="space-y-4">
-                            @csrf
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700">Nama</label>
-                                <input type="text" id="name" name="name" required autofocus
-                                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                            </div>
+    <!-- Register Box -->
+    <div class="register-box">
+        <h5 class="text-center mb-4">create an account</h5>
 
-                            <div>
-                                <label for="username" class="block text-sm font-medium text-gray-700">Nama Pengguna</label>
-                                <input type="text" id="username" name="username" required
-                                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                            </div>
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
 
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                                <input type="email" id="email" name="email" required
-                                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                            </div>
-
-                            <div>
-                                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                                <input type="password" id="password" name="password" required
-                                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                            </div>
-
-                            <div>
-                                <label for="password_confirmation" class="block text-sm font-medium text-gray-700">Konfirmasi Password</label>
-                                <input type="password" id="password_confirmation" name="password_confirmation" required
-                                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                            </div>
-
-                            <button type="submit"
-                                class="w-full py-2 px-4 bg-purple-700 text-white font-semibold rounded-md hover:bg-purple-800 transition duration-200">
-                                Daftar
-                            </button>
-                        </form>
-
-                        <p class="mt-6 text-center text-sm text-gray-600">
-                            Sudah punya akun?
-                            <a href="{{ route('login') }}" class="text-purple-700 font-semibold hover:underline">Masuk sekarang</a>
-                        </p>
-                    </div>
-                </div>
+            <div class="mb-3">
+                <label>Enter your name</label>
+                <input type="text" class="form-control" name="name" placeholder="your name" required>
             </div>
-        </div>
+
+            <div class="mb-3">
+                <label>Make username</label>
+                <input type="text" class="form-control" name="username" placeholder="username" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Enter your Email</label>
+                <input type="email" class="form-control" name="email" placeholder="your email" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Enter your Password</label>
+                <input type="password" class="form-control" name="password" placeholder="your password" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Confirm password</label>
+                <input type="password" class="form-control" name="password_confirmation" placeholder="confirm password" required>
+            </div>
+
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" required>
+                <label class="form-check-label">
+                    I agree all statements in <a href="#">Terms of service</a>
+                </label>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-register">sign up</button>
+            </div>
+        </form>
     </div>
+
 </body>
 </html>

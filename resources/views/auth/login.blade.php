@@ -1,69 +1,105 @@
-<!DOCTYPE html>
-<html lang="id">
+    <!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Login - Kompeteen</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite(['resources/css/app.css'])
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - Kompeteen</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #4b0082;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'poppins',sans-serif;
+    }
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+    .btn-login {
+      background-color: #4b0082;
+      color: white;
+      font-weight: bold;
+    }
+    .brand {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .brand span {
+      color: orange;
+    }
+    .google-btn {
+      border: 1px solid #ddd;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      background-color: white;
+    }
+    .google-btn img {
+      height: 20px;
+      margin-right: 10px;
+    }
+    .or-divider {
+      text-align: center;
+      margin: 20px 0;
+      position: relative;
+    }
+    .or-divider::before,
+    .or-divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: #ccc;
+    }
+    .or-divider::before {
+      left: 0;
+    }
+    .or-divider::after {
+      right: 0;
+    }
+  </style>
 </head>
-<body class="bg-gray-100">
-    <div class="min-h-screen flex items-center justify-center">
-        <div class="max-w-4xl w-full bg-white shadow-lg rounded-lg overflow-hidden">
-            <div class="flex flex-col md:flex-row">
-                <!-- Left side image -->
-                <div class="hidden md:block md:w-1/2 bg-gradient-to-tr from-purple-800 to-purple-600 p-12">
-                    <div class="text-white">
-                        <h2 class="text-3xl font-bold mb-4">Selamat Datang di Kompeteen</h2>
-                        <p class="text-lg mb-8">Bangun kompetensimu dan raih masa depan cerah bersama kami.</p>
-                        <img src="/images/hero-illustration.svg" class="max-w-full h-auto" alt="Ilustrasi">
-                    </div>
-                </div>
+<body class="d-flex flex-column align-items-center justify-content-center" style="background-color: #4b0082; height: 100vh;">
 
-                <!-- Login form -->
-                <div class="w-full md:w-1/2 py-16 px-8">
-                    <div class="max-w-sm mx-auto">
-                        <div class="text-center mb-8">
-                            <img src="/images/logo-kompeteen.png" alt="Logo Kompeteen" class="mx-auto h-16 mb-4">
-                            <h2 class="text-2xl font-bold text-gray-800">Masuk ke Akun Anda</h2>
-                            <p class="text-sm text-gray-500">Silakan login untuk melanjutkan</p>
-                        </div>
+  <div class="text-center mb-3" style="color: white; font-size: 2rem; font-weight: 700;">
+    Kompe<span style="color: orange;">teen</span>
+  </div>
 
-                        <form method="POST" action="#" class="space-y-6">
-                            @csrf
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                                <input type="email" id="email" name="email" required
-                                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                            </div>
+  <div class="login-box">
+    <h5 class="text-center mb-2">login to your account</h5>
 
-                            <div>
-                                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                                <input type="password" id="password" name="password" required
-                                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                            </div>
+    <form method="POST" action="{{ route('login') }}">
+      @csrf
 
-                            <div class="flex items-center justify-between text-sm">
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="form-checkbox text-purple-600">
-                                    <span class="ml-2 text-gray-600">Ingat saya</span>
-                                </label>
-                                <a href="#" class="text-purple-600 hover:underline">Lupa password?</a>
-                            </div>
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" name="username" placeholder="Enter Username" required>
+      </div>
 
-                            <button type="submit"
-                                class="w-full py-2 px-4 bg-purple-700 text-white font-semibold rounded-md hover:bg-purple-800 transition duration-200">
-                                Masuk
-                            </button>
-                        </form>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
+      </div>
 
-                        <p class="mt-6 text-center text-sm text-gray-600">
-                            Belum punya akun?
-                            <a href="/register" class="text-purple-700 font-semibold hover:underline">Daftar sekarang</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-login">LOGIN</button>
+      </div>
+    </form>
+
+    <div class="or-divider">OR</div>
+
+    <button class="google-btn d-flex align-items-center justify-content-center">
+      <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo">
+      LOGIN WITH GOOGLE
+    </button>
+  </div>
+
 </body>
-</html>
