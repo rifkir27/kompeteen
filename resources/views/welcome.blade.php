@@ -16,20 +16,22 @@
 
     {{-- Navbar --}}
     <nav class="primary text-white flex justify-between items-center px-6 py-4">
-        <div class="text-xl font-bold">
-            <span class="text-white">Kompe</span><span class="text-orange-400">teen</span>
+        <div class="text-4xl font-bold">
+            <span class="text-white">Kompe</span><span class="text-orange-600">teen</span>
         </div>
         <ul class="flex space-x-4 text-sm">
-            <li><a href="#" class="hover:underline">Home</a></li>
-            <li><a href="#" class="hover:underline">Course</a></li>
-            <li><a href="#" class="hover:underline">Category</a></li>
-            <li><a href="#" class="hover:underline">Review</a></li>
-            <li><a href="#" class="hover:underline">Showcase</a></li>
-            <li><a href="#" class="hover:underline">Mentor</a></li>
-            <li><a href="#" class="hover:underline">Infrastructure</a></li>
+            <li><a href="#" class="hover:underline font-light">Home</a></li>
+            <li><a href="#" class="hover:underline font-light">Course</a></li>
+            <li><a href="#" class="hover:underline font-light">Category</a></li>
+            <li><a href="#" class="hover:underline font-light">Review</a></li>
+            <li><a href="#" class="hover:underline font-light">Showcase</a></li>
+            <li><a href="#" class="hover:underline font-light">Mentor</a></li>
+            <li><a href="#" class="hover:underline font-light">Infrastructure</a></li>
         </ul>
         <div class="space-x-2">
-            <a href="{{ route('login') }}" class="btn-orange px-4 py-1 rounded text-sm">Sign In</a>
+           <a href="{{ route('login') }}" class="px-4 py-1 rounded text-sm bg-orange-600 text-white hover:bg-orange-600">
+            Sign In
+        </a>
             <a href="{{ route('register') }}" class="border border-white px-4 py-1 rounded text-sm hover:bg-white hover:text-purple-800">Sign Up</a>
         </div>
     </nav>
@@ -96,17 +98,17 @@
         <div>
             <h3 class="font-semibold mb-2">Informasi</h3>
             <ul class="text-sm space-y-1">
-                <li><a href="#" class="hover:underline">Tentang Kami</a></li>
-                <li><a href="#" class="hover:underline">FAQ</a></li>
-                <li><a href="#" class="hover:underline">Tim Kami</a></li>
+                <li><a href="#" class="hover:underline font-light">Tentang Kami</a></li>
+                <li><a href="#" class="hover:underline font-light">FAQ</a></li>
+                <li><a href="#" class="hover:underline font-light">Tim Kami</a></li>
             </ul>
         </div>
         <div>
             <h3 class="font-semibold mb-2">Komunitas</h3>
             <ul class="text-sm space-y-1">
-                <li><a href="#" class="hover:underline">Ulasan Member</a></li>
-                <li><a href="#" class="hover:underline">Showcase Member</a></li>
-                <li><a href="#" class="hover:underline">Grup Telegram</a></li>
+                <li><a href="#" class="hover:underline font-light">Ulasan Member</a></li>
+                <li><a href="#" class="hover:underline font-light">Showcase Member</a></li>
+                <li><a href="#" class="hover:underline font-light">Grup Telegram</a></li>
             </ul>
         </div>
     </footer>
