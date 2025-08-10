@@ -96,10 +96,10 @@
 
     <div class="or-divider">OR</div>
 
-    <button class="google-btn d-flex align-items-center justify-content-center">
+      <a href="{{ route('google.login') }}" class="google-btn d-flex align-items-center justify-content-center">
       <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo">
       LOGIN WITH GOOGLE
-    </button>
+      </a>
   </div>
 
 </body>

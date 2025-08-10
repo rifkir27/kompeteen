@@ -43,16 +43,20 @@
         </h1>
         <p class="text-sm mt-2">Belajar, berkolaborasi, dan kembangkan skill anda bersama kami di KOMPETEEN</p>
         <div class="mt-6 space-x-4">
-            <a href="{{ route('register') }}" class="btn-orange px-4 py-2 rounded">Daftar Sekarang</a>
-            <a href="#" class="border border-gray-600 px-4 py-2 rounded text-sm">Lihat Showcase</a>
+            <a href="{{ route('register') }}" class="btn-orange px-4 py-2 rounded-lg">Daftar Sekarang</a>
+            <a href="#" class="border border-gray-600 px-4 py-2 rounded-lg text-sm">Lihat Showcase</a>
         </div>
 
         {{-- Gambar showcase --}}
-        <div class="mt-10 flex flex-col md:flex-row justify-center items-center gap-4 px-4">
-            <img src="https://source.unsplash.com/150x250/?coding,woman" class="rounded-xl" alt="">
-            <img src="https://source.unsplash.com/150x250/?coding,laptop" class="rounded-xl" alt="">
-            <img src="https://source.unsplash.com/150x250/?developer,team" class="rounded-xl" alt="">
-        </div>
+<div class="mt-10 flex flex-col md:flex-row justify-center items-center gap-4 px-4">
+    <img src="{{ asset('images/img.png') }}" 
+        class="rounded-xl transform -rotate-3 shadow-lg" alt="">
+    <img src="{{ asset('images/img.png') }}" 
+         class="rounded-xl shadow-lg relative -top-2" alt="">
+    <img src="{{ asset('images/img.png') }}" 
+        class="rounded-xl transform rotate-3 shadow-lg" alt="">
+</div>
+
     </section>
 
     {{-- Course Section --}}
@@ -63,22 +67,25 @@
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
             @for ($i = 0; $i < 6; $i++)
                 <div class="border rounded-lg shadow-md overflow-hidden">
-                    <img src="https://source.unsplash.com/400x200/?coding,flutter" alt="Course image">
+                    <div class="relative">
+                        <img src="{{ asset('images/tgs.png') }}" alt="Course image" class="w-full h-48 object-cover">
+                    <div class="absolute top-0 left-0 flex justify-between w-full p-2 text-sm">
+                        <span class="bg-orange-500 text-white px-2 py-0.5 rounded">★ 4.9</span>
+                        <span class="bg-orange-500 text-white px-2 py-0.5 rounded">50% OFF</span>
+                   </div>
+                </div>
                     <div class="p-4 bg-purple-800 text-white">
-                        <div class="flex justify-between items-center text-sm mb-1">
-                            <span class="bg-orange-500 px-2 py-0.5 rounded">★ 4.9</span>
-                            <span class="bg-orange-500 px-2 py-0.5 rounded">50% OFF</span>
-                        </div>
                         <h3 class="text-sm font-semibold mb-1">Membangun Mobile Apps Menggunakan Flutter</h3>
-                        <p class="text-xs">Anggieta Diyon</p>
-                        <p class="text-xs text-purple-200 mb-2">Populer</p>
-                        <p class="text-white font-bold text-sm">Rp 250.000</p>
-                        <div class="flex justify-between mt-3">
+                            <p class="text-xs">Anggieta Diyon</p>
+                            <p class="text-xs text-purple-200 mb-2">Populer</p>
+                            <p class="text-white font-bold text-sm">Rp 250.000</p>
+                      <div class="flex justify-between mt-3">
                             <a href="#" class="text-xs bg-orange-500 px-3 py-1 rounded hover:bg-orange-600">Daftar Kelas</a>
                             <a href="#" class="text-xs border border-white px-3 py-1 rounded hover:bg-white hover:text-purple-800">Detail Kelas</a>
                         </div>
                     </div>
                 </div>
+
             @endfor
         </div>
 
@@ -93,7 +100,7 @@
             <div class="text-xl font-bold mb-2">
                 Kompe<span class="text-orange-400">teen</span>
             </div>
-            <p class="text-sm">Website belajar seputar coding lengkap. Ada pertanyaan? Hubungi 082140946544</p>
+            <p class="text-sm">Website belajar seputar coding lengkap. Ada pertanyaan lebih lanjut? Hubungi 082140946544</p>
         </div>
         <div>
             <h3 class="font-semibold mb-2">Informasi</h3>
