@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <title>Register - Kompeteen</title>
 
-    <!-- Google Font Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap (optional) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -65,10 +63,8 @@
 </head>
 <body class="d-flex flex-column align-items-center justify-content-center">
 
-    <!-- Kompeteen logo -->
     <div class="text-center mb-3 brand">Kompe<span>teen</span></div>
 
-    <!-- Register Box -->
     <div class="register-box">
         <h5 class="text-center mb-4">create an account</h5>
 

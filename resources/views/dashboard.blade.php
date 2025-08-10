@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <title>Detail Course - Kompeteen</title>
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -99,7 +97,6 @@
 </head>
 <body>
 
-    <!-- Sidebar -->
     <div class="sidebar">
         <div class="brand">Kompe<span>teen</span></div>
         <a href="#" class="nav-link"> Dashboard</a>
@@ -111,7 +108,7 @@
         <a href="#" class="nav-link"> Sign Out</a>
     </div>
 
-    <!-- Main Content -->
+
     <div class="main-content">
         <nav style="font-size: 14px;" class="mb-3">
             <a href="#">Home</a> / <a href="#">My Course</a> / <strong>Details Course</strong>
@@ -136,8 +133,8 @@
         </div>
 
         <div class="d-flex gap-5 flex-wrap">
-            <!-- Kurikulum -->
-            <div class="flex-fill" style="min-width: 300px;">
+
+        <div class="flex-fill" style="min-width: 300px;">
                 <h6 class="fw-bold">Kurikulum E-Course</h6>
                 <div class="accordion" id="accordionCourse">
                     @for($i = 1; $i <= 3; $i++)
@@ -163,7 +160,6 @@
             </div>
 
     
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

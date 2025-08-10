@@ -48,21 +48,24 @@
         </div>
 
         {{-- Gambar showcase --}}
-<div class="mt-10 flex flex-col md:flex-row justify-center items-center gap-4 px-4">
-    <img src="{{ asset('images/img.png') }}" 
-        class="rounded-xl transform -rotate-3 shadow-lg" alt="">
-    <img src="{{ asset('images/img.png') }}" 
-         class="rounded-xl shadow-lg relative -top-2" alt="">
-    <img src="{{ asset('images/img.png') }}" 
-        class="rounded-xl transform rotate-3 shadow-lg" alt="">
-</div>
+        <div class="mt-10 flex flex-col md:flex-row justify-center gap-1.5 px-4">
+            <img src="{{ asset('images/img.png') }}" 
+                class="rounded-2xl transform -rotate-2 shadow-lg translate-y-2" alt="">
+
+            <img src="{{ asset('images/img.png') }}" 
+                class="rounded-2xl shadow-lg relative top-0.5" alt="">
+                
+            <img src="{{ asset('images/img.png') }}" 
+                class="rounded-2xl transform rotate-2 shadow-lg translate-y-2" alt="">
+        </div>
+
 
     </section>
 
     {{-- Course Section --}}
     <section class="px-4 py-16 max-w-7xl mx-auto">
-        <h2 class="text-lg mb-2">Siap upgrade skill anda hari ini ?</h2>
-        <h3 class="text-xl font-semibold mb-6">Dapatkan kelas sesuai passion dan skill anda</h3>
+        <h2 class="text-lg mb-2 font-thin">Siap upgrade skill anda hari ini ?</h2>
+        <h3 class="text-2xl font-semibold mb-6">Dapatkan kelas sesuai passion dan skill anda</h3>
 
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
             @for ($i = 0; $i < 6; $i++)
