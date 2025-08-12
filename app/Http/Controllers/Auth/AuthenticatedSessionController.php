@@ -24,11 +24,23 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
+        \Log::info('Login attempt started', [
+            'username' => $request->username,
+            'ip' => $request->ip()
+        ]);
+
         $request->authenticate();
+
+        \Log::info('Authentication successful', [
+            'user_id' => auth()->id(),
+            'username' => auth()->user()->username
+        ]);
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        \Log::info('Session regenerated, redirecting to home');
+
+        return redirect()->intended(route('home', absolute: false));
     }
 
     /**

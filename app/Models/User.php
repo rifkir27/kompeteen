@@ -37,6 +37,12 @@ public function enrolledCourses()
         'username',
         'email',
         'password',
+        'phone',
+        'bio',
+        'address',
+        'birthdate',
+        'website',
+        'profile_picture',
     ];
 
     /**
