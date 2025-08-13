@@ -65,7 +65,7 @@
     {{-- Course Section --}}
     <section class="px-4 py-16 max-w-7xl mx-auto">
         <h2 class="text-lg mb-2 font-thin">Siap upgrade skill anda hari ini ?</h2>
-        <h3 class="text-2xl font-semibold mb-6">Dapatkan kelas sesuai passion dan skill anda</h3>
+        <h3 class="text-2xl font-semibold mb-6">Dapatkan kelas sesuai passion dan skill anda </h3>
 
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
             @for ($i = 0; $i < 6; $i++)

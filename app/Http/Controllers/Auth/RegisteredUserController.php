@@ -47,8 +47,8 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        // Redirect ke halaman yang tidak memerlukan verifikasi email
-        return redirect(route('welcome', absolute: false));
+        // Redirect ke halaman home setelah registrasi
+        return redirect(route('home', absolute: false));
 }
     
     }

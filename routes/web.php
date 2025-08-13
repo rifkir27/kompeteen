@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\MyCoursesController;
 
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
@@ -14,16 +15,23 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('home');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 Route::get('/home', function () {
+    \Log::info('Home route accessed', [
+        'user_id' => auth()->id(),
+        'user' => auth()->user()
+    ]);
     return view('home');
-})->middleware(['auth', 'verified'])->name('home');
+})->middleware(['auth'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    // My Courses Routes
+    Route::get('/my-courses', [MyCoursesController::class, 'index'])->name('my-courses');
 });
 
 require __DIR__.'/auth.php';
