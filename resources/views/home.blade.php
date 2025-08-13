@@ -90,31 +90,7 @@
         </div>
     </nav>
 
-    {{-- Welcome Section --}}
-    <section class="text-center px-4 py-16 bg-gradient-to-b from-purple-50 to-white">
-        <h1 class="text-2xl md:text-3xl font-semibold leading-relaxed">
-            Selamat Datang, <span class="text-orange-600">{{ auth()->user()->name }}</span>!
-        </h1>
-        <p class="text-sm mt-2 text-gray-600">Terus tingkatkan skill Anda dengan kursus-kursus terbaik kami</p>
-        
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-lg font-semibold text-purple-800">Kursus Aktif</h3>
-                <p class="text-3xl font-bold text-orange-600 mt-2">5</p>
-                <p class="text-sm text-gray-600">Sedang dipelajari</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-lg font-semibold text-purple-800">Progress</h3>
-                <p class="text-3xl font-bold text-orange-600 mt-2">72%</p>
-                <p class="text-sm text-gray-600">Keseluruhan</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-lg font-semibold text-purple-800">Sertifikat</h3>
-                <p class="text-3xl font-bold text-orange-600 mt-2">3</p>
-                <p class="text-sm text-gray-600">Telah diperoleh</p>
-            </div>
-        </div>
-    </section>
+    
 
     {{-- My Courses Section --}}
     <section class="px-4 py-16 max-w-7xl mx-auto">
@@ -221,3 +197,23 @@
 
 </body>
 </html>
+                        <span class="bg-green-500 text-white px-2 py-0.5 rounded">Selesai</span>
+                        <span class="bg-green-500 text-white px-2 py-0.5 rounded">100% Selesai</span>
+                    </div>
+                </div>
+                <div class="p-4 bg-purple-800 text-white">
+                    <h3 class="text-sm font-semibold mb-1">JavaScript Dasar hingga Mahir</h3>
+                    <div class="flex items-center text-xs mb-2">
+                        <span class="text-yellow-400">★★★★☆</span>
+                        <span class="ml-1">4.5 (342 ulasan)</span>
+                    </div>
+                    <p class="text-xs mb-2">Progress: 100% • Sertifikat tersedia</p>
+                    <div class="flex items-center text-xs mb-3">
+                        <i class="fas fa-clock mr-1"></i>
+                        <span>20 jam total</span>
+                        <i class="fas fa-certificate ml-3 mr-1"></i>
+                        <span>Sertifikat</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+                        <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
+                    </div>
